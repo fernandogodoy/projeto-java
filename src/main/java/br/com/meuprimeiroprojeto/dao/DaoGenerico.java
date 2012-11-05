@@ -1,4 +1,4 @@
-package br.com.meuprimeiroprojeto.util;
+package br.com.meuprimeiroprojeto.dao;
 
 import java.io.Serializable;
 import java.util.List;

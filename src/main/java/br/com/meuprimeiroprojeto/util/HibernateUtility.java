@@ -1,8 +1,5 @@
 package br.com.meuprimeiroprojeto.util;
 
-
-
-
 import br.com.meuprimeiroprojeto.modelo.Cidade;
 import br.com.meuprimeiroprojeto.modelo.Estado;
 import org.hibernate.Session;
@@ -66,6 +63,7 @@ public class HibernateUtility {
                     /***MYSQL***/
                     .setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLInnoDBDialect")
                     .setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver")
+                    
                     //CONFIGURAÇÃO DA BASE DE DADOS ** Verificar sempre Username e Password caso necessario alterar.
                     .setProperty("hibernate.connection.url", "jdbc:mysql://localhost/meuprimeiroprojeto")
                     .setProperty("hibernate.connection.username", "root")

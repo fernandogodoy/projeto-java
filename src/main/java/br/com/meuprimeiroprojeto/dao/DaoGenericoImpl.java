@@ -1,5 +1,6 @@
-package br.com.meuprimeiroprojeto.util;
+package br.com.meuprimeiroprojeto.dao;
 
+import br.com.meuprimeiroprojeto.util.HibernateUtility;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
@@ -172,6 +173,6 @@ public class DaoGenericoImpl<T, ID extends Serializable> implements DaoGenerico<
     @Override
     public void cancel() {
         HibernateUtility.rollbackTransaction();
-        HibernateUtility.closeSession();        
+        HibernateUtility.closeSession();
     }
 }
