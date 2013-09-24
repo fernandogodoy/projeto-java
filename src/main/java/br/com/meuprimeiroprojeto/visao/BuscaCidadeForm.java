@@ -4,10 +4,10 @@
  */
 package br.com.meuprimeiroprojeto.visao;
 
-import br.com.meuprimeiroprojeto.tablemodel.TableModelEstado;
-import br.com.meuprimeiroprojeto.dao.EstadoDao;
-import br.com.meuprimeiroprojeto.dao.EstadoDaoImpl;
-import br.com.meuprimeiroprojeto.modelo.Estado;
+import br.com.meuprimeiroprojeto.dao.CidadeDao;
+import br.com.meuprimeiroprojeto.dao.CidadeDaoImpl;
+import br.com.meuprimeiroprojeto.modelo.Cidade;
+import br.com.meuprimeiroprojeto.tablemodel.TableModelCidade;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -16,21 +16,21 @@ import javax.swing.JTable;
  *
  * @author Fernando
  */
-public class BuscaForm extends javax.swing.JDialog {
+public class BuscaCidadeForm extends javax.swing.JDialog {
 
-    private TableModelEstado tmModelEstado = new TableModelEstado(null);
+    private TableModelCidade tmModelCidade = new TableModelCidade(null);
 
     /**
-     * Creates new form BuscaForm
+     * Creates new form BuscaEstadoForm
      */
-    public BuscaForm(java.awt.Frame parent, boolean modal) {
+    public BuscaCidadeForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
 
     }
 
-    public BuscaForm() {
+    public BuscaCidadeForm() {
         initComponents();
-        table.setModel(new TableModelEstado(null));
+        table.setModel(new TableModelCidade(null));
         setModal(true);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -110,13 +110,13 @@ public class BuscaForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        EstadoDao dao = new EstadoDaoImpl();
-        List<Estado> estados = dao.listar(tfNome.getText().trim());
-        if (estados.isEmpty()) {
+        CidadeDao dao = new CidadeDaoImpl();
+        List<Cidade> cidades = dao.listar(tfNome.getText().trim());
+        if (cidades.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Busca não obteve resultados");
         } else {
-            tmModelEstado.setLista(estados);
-            table.setModel(tmModelEstado);
+            tmModelCidade.setLista(cidades);
+            table.setModel(tmModelCidade);
             table.updateUI();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -138,7 +138,7 @@ public class BuscaForm extends javax.swing.JDialog {
         return table;
     }
 
-    public TableModelEstado getTmModelEstado() {
-        return tmModelEstado;
+    public TableModelCidade getTmModelCidade() {
+        return tmModelCidade;
     }
 }
