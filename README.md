@@ -1,1 +1,1 @@
-Projeto simples para estudos
+Projeto simples para estudos alguma coisa
